@@ -1,17 +1,21 @@
 #include <iostream>
 using namespace std;
-void SortASC(int num)
-{
-    if(num==0)
-        return;
 
-    SortASC(num-1);
-    cout<<num<<endl;
+void Seperate(int num)
+{
+  if(num==0)
+        return;
+  Seperate(num/10);
+  cout<<num%10<<" ";
 
 }
+
+
+
 int main()
 {
-    SortASC(5);
-
-     return 0;
+   Seperate(534);
+   cout<<endl;
+   Seperate(12346);
+    return 0;
 }
