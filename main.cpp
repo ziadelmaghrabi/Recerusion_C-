@@ -1,32 +1,31 @@
 #include <iostream>
 using namespace std;
-
-void Even_index(int arr[],int size1)
+void DrawPyramid(int currentRow,int h)
 {
-  if(size1<0)
+    if (currentRow>h)
         return;
-  if( size1%2==0)
- cout<<arr[size1]<<" ";
 
-  Even_index(arr,size1-1);
+    for(int i=0;i<h-currentRow;i++)
+        cout<<" ";
+
+    for(int i=0;i<2*currentRow-1;i++)
+        cout<<"*";
+
+    cout<<endl;
+
+    DrawPyramid(currentRow+1,h);
+
+
 }
-
-
 
 
 
 
 int main()
 {
-    int s;
-    cout<<"enter size of array?=";
-    cin>>s;
-    int arr[100];
-    for(int i=0;i<s;i++)
-    {
-        cin>>arr[i];
-    }
-    Even_index(arr,s-1);
-
+    int h;
+    cout<<"enter the Heighet of pyramids?=";
+    cin>>h;
+     DrawPyramid(0,h);
     return 0;
 }
