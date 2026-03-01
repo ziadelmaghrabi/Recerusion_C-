@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
-
-void PrintString(int num)
+void SortASC(int num)
 {
     if(num==0)
         return;
-    cout<<"I LOVE RECERUSION"<<endl;
-    PrintString(num-1);
-}
 
+    SortASC(num-1);
+    cout<<num<<endl;
+
+}
 int main()
 {
-    PrintString(3);
+    SortASC(5);
 
-    return 0;
+     return 0;
 }
