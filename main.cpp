@@ -1,17 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void PrintString(int num)
+void Even_index(int arr[],int size1)
 {
-    if(num==0)
+  if(size1<0)
         return;
-    cout<<"I LOVE RECERUSION"<<endl;
-    PrintString(num-1);
+  if( size1%2==0)
+ cout<<arr[size1]<<" ";
+
+  Even_index(arr,size1-1);
 }
+
+
+
+
+
 
 int main()
 {
-    PrintString(3);
+    int s;
+    cout<<"enter size of array?=";
+    cin>>s;
+    int arr[100];
+    for(int i=0;i<s;i++)
+    {
+        cin>>arr[i];
+    }
+    Even_index(arr,s-1);
 
     return 0;
 }
